@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday🥳</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Confetti Animation -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Countdown Card -->
+  <div class="countdown-card">
+    <h1>🎉 Countdown to <span class="name">XYZ</span> Birthday 🥳🎂</h1>
+    <div class="countdown">
+      <div><span id="days">00</span><p>Days</p></div>
+      <div><span id="hours">00</span><p>Hours</p></div>
+      <div><span id="minutes">00</span><p>Minutes</p></div>
+      <div><span id="seconds">00</span><p>Seconds</p></div>
+    </div>
+  </div>
+
+  <!-- 🎉 Final Message Card (Shown After Countdown Ends) -->
+<div class="final-message-card" id="final-message" style="display: none;">
+  <h2>🎂 It's your Birthday Time!🥳😘</h2>
+  <p>Let's cut the cake🥳</p>
+  <button id="next-btn">Next ➡️</button>
+</div>
+
+  <!-- 🎂 Cake Wrapper (Initially Hidden) -->
+<div id="cake-wrapper" style="display: none;">
+  <div class="cake">
+    <div class="layer layer-bottom"></div>
+    <div class="layer layer-middle"></div>
+    <div class="layer layer-top"></div>
+    <div class="candle">
+      <div class="flame" id="flame"></div>
+    </div>
+  </div>
+  <button id="blow-btn">Blow the candle🤩</button>
+</div>
+
+<!-- 🎇 Sparkle Canvas -->
+<canvas id="sparkleCanvas"></canvas>
+
+<!-- 🎉 Birthday Wish Card -->
+<div id="wish-card" style="display: none;" class="wish-card">
+  <h2>🎈 Happy Birthday XYZ♥️, My Bestest💖</h2>
+  <p>Wishing you a day filled with love, laughter, and all the things that make you smile. Have an amazing year ahead! 💖🥳Wishing you endless joy, success, and unforgettable moments. May your day be as special as you are and the year ahead bring amazing opportunities and happiness! 🥰💫❤️</p>
+  <button id="back-to-start-btn">Next ➡️</button>
+</div> 
+
+<div id="final-wish-card" style="display: none;" class="wish-card">
+  <h2>💌 And Finally... <b>Happy Birthday again🎂</b></h2>
+  <p>I’ll always stand by you—through every high and low. I pray your future is filled with happiness, success, and beautiful moments. You deserve nothing but the best, and I’ll be here cheering you on every step of the way. 💫💖</p>
+</div>
+
+<audio id="birthday-music" loop>
+  <source src="38-Michael-Riepen-Happy-Birthday(chosic.com).mp3" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(to top right, #ffe1f0, #ffccf9);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Countdown Card */
+.countdown-card {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 70px 90px;
+  border-radius: 30px;
+  text-align: center;
+  animation: popUp 0.8s ease forwards;
+
+  /* Remove problematic styles */
+  box-shadow: none;
+  border: none;
+  outline: none;
+  transform: none; /* important to ensure no zoom */
+  
+}
+/* Heading */
+.countdown-card h1 {
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  color: #ff4081;
+}
+
+.countdown-card .name {
+  color: #ff0080;
+  font-weight: bold;
+}
+
+/* Countdown Container */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Countdown Boxes */
+.countdown div {
+  background: #ffccf9;
+  padding: 25px 30px;
+  border-radius: 20px;
+  min-width: 110px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.countdown div:hover {
+  transform: scale(1.03);
+}
+
+/* Numbers */
+.countdown span {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #d63384;
+}
+
+/* Labels */
+.countdown p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+/* Confetti Canvas */
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Animation */
+@keyframes popUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* === 🎂 Cake Styling === */
+#cake-wrapper {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 999;
+}
+
+.cake {
+  position: relative;
+  width: 300px;
+  animation: popIn 1s ease-out;
+}
+
+.layer {
+  height: 60px;
+  border-radius: 15px;
+  margin: 6px 0;
+  box-shadow: inset -4px -6px rgba(0, 0, 0, 0.05);
+}
+
+.layer-bottom {
+  background: #ff6f91;
+  width: 100%;
+}
+
+.layer-middle {
+  background: #ffb6c1;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.layer-top {
+  background: #ffe1f0;
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* Candle */
+.candle {
+  width: 14px;
+  height: 50px;
+  background: #ff3b3f;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px;
+}
+
+.flame {
+  width: 14px;
+  height: 20px;
+  background: radial-gradient(circle, yellow, orange, red);
+  border-radius: 50%;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  animation: flicker 0.2s infinite;
+}
+
+@keyframes popIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
+#blow-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  animation: popIn 1s ease-out;
+}
+
+/* 🎆 Sparkle Canvas */
+#sparkleCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+}
+
+@keyframes popIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
+/* 🎉 Final Message Card Styling */
+.final-message-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 40px 60px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.final-message-card h2 {
+  font-size: 2rem;
+  color: #ff4081;
+  margin-bottom: 10px;
+}
+
+.final-message-card p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+#next-btn {
+  padding: 10px 25px;
+  font-size: 1rem;
+  background: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#next-btn:hover {
+  transform: scale(1.05);
+}
+.wish-card {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  background: #fff0fa;
+  border-radius: 25px;
+  padding: 50px 70px;
+  text-align: center;
+  z-index: 9999;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+  animation: popIn 0.8s ease forwards;
+  max-width: 90%;
+  box-sizing: border-box;
+  display: none;
+}
+
+
+
+.wish-card h2 {
+  color: #ff4081;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.wish-card p {
+  font-size: 1.3rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+#back-to-start-btn {
+  margin-top: 30px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  background: linear-gradient(45deg, #ff4081, #ff80ab);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 64, 129, 0.3);
+  transition: background 0.3s ease;
+}
+
+#back-to-start-btn:hover {
+  background: linear-gradient(45deg, #ff5e9c, #ffa3c4);
+}
